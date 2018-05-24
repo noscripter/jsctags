@@ -29,7 +29,9 @@
   "scripts": {
     "test": "NODE_ENV=test nyc node test",
     "lint": "semistandard | snazzy",
-    "coverage": "nyc report --reporter=text-lcov | codeclimate-test-reporter"
+    "coverage": "nyc report --reporter=text-lcov | codeclimate-test-reporter",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "dependencies": {
     "acorn": "^3.0.2",
@@ -55,7 +57,8 @@
     "optimist": "^0.6.1",
     "tern": "^0.17.0",
     "tern-react": "^0.1.0",
-    "tryor": "^0.1.2"
+    "tryor": "^0.1.2",
+    "snyk": "^1.80.1"
   },
   "devDependencies": {
     "assert-diff": "^1.0.1",
@@ -71,5 +74,6 @@
     "ignore": [
       "test/cases/"
     ]
-  }
+  },
+  "snyk": true
 }
